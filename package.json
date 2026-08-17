@@ -2,7 +2,22 @@
   "name": "angular-interface-to-io",
   "displayName": "Angular-interface-to-io",
   "description": "Automatizate makeing input and output functions of your types (interfaces).",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "publisher": "Timur Khen", 
+  "icon": "./public/i2ioLogo.svg",
+  "author": "Timur Khen",
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "interface",
+    "input",
+    "output",
+    "generator"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/<ваш-логин>/<ваш-репозиторий>.git"
+  },
   "engines": {
     "vscode": "^1.125.0"
   },
