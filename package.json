@@ -16,6 +16,10 @@
       {
         "command": "angular-interface-to-io.generateInput",
         "title": "transform interface to input"
+      },
+      {
+        "command": "angular-interface-to-io.generateOutput",
+        "title": "transform interface to output"
       }
     ],
     "menus": {
@@ -23,6 +27,10 @@
         {
           "command": "angular-interface-to-io.generateInput",
           "title": "Angular: transform interface to input"
+        },
+        {
+          "command": "angular-interface-to-io.generateOutput",
+          "title": "transform interface to output"
         }
       ]
     }
