@@ -1,71 +1,102 @@
-# angular-interface-to-io README
+# Angular Interface to IO
 
-This is the README for your extension "angular-interface-to-io". After writing up a brief description, we recommend including the following sections.
+<p align="center">
+  <img src="public/i2ioLogo.jpg" alt="Angular Interface to IO logo" width="160" />
+</p>
+
+Generate Angular signal boilerplate from TypeScript interfaces in seconds.
+
+This extension transforms interface fields into Angular `input()`, `model()`, `linkedSignal()`, and `output()` patterns directly in VS Code.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Generate `input()` fields from interface properties
+- Generate `model()` values when needed
+- Optionally split generated code into `input + linkedSignal`
+- Generate `output()` emitters from interface data
+- Auto-import matching Angular symbols
+- Works on selected code in the editor
 
-For example if there is an image subfolder under your extension project workspace:
+## Demo
 
-\!\[feature X\]\(images/feature-x.png\)
+Add your GIFs in `public/` and reference them here:
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+<p align="center">
+  <img src="public/input-demo.gif" alt="Input generation demo" width="900" />
+</p>
+
+<p align="center">
+  <img src="public/output-demo.gif" alt="Output generation demo" width="900" />
+</p>
+
+## Quick start
+
+1. Open a TypeScript file in VS Code.
+2. Select an interface or interface fields.
+3. Run the command:
+   - `Angular: transform interface to input`
+   - `Angular: transform interface to output`
+
+## Example
+
+```ts
+export interface UserForm {
+  name: string;
+  email: string;
+  age: number;
+}
+```
+
+Generated result:
+
+```ts
+readonly name = input.required<UserForm["name"]>();
+readonly email = input.required<UserForm["email"]>();
+readonly age = input.required<UserForm["age"]>();
+```
+
+## Commands
+
+This extension contributes:
+
+- `angular-interface-to-io.generateInput`
+- `angular-interface-to-io.generateOutput`
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- VS Code `^1.125.0`
+- Angular project using signal-based patterns (version 17.1 and newwer)
 
-## Extension Settings
+## Installation
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+Repository: https://github.com/TimurKhen/Angular-interface-to-io
 
-For example:
+### Local development
 
-This extension contributes the following settings:
+```bash
+npm install
+npm run compile
+```
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+Then press `F5` in VS Code to launch the extension host.
 
-## Known Issues
+## Asset storage
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+Store logo, screenshots, and GIFs in the `public` folder:
 
-## Release Notes
+```text
+public/
+├── logo.png
+├── input-demo.gif
+├── output-demo.gif
+```
 
-Users appreciate release notes as you update your extension.
+## Release notes
 
-### 1.0.0
+### 0.0.1
 
-Initial release of ...
+- Initial extension release
+- Added input generation
+- Added output generation
 
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+For a longer project description and implementation context, see [workDescription.md](workDescription.md).

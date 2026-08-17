@@ -19,8 +19,8 @@ async function convert(string: string, needSplit: boolean, isModel: boolean) {
 
     if (needSplit) {
         return [
-            `    readonly ${name}Input = input.required<${type}>();`,
-            `    ${name} = linkedSignal(() => this.${name}Input);`
+            `   readonly ${name}Input = input.required<${type}>();`,
+            `   ${name} = linkedSignal(() => this.${name}Input);`
         ].join('\n');
     } else {
         return `    readonly ${name} = ${isModel ? 'model' : 'input'}.required<${type}>();`;
@@ -40,9 +40,8 @@ export async function input(text: string, needSplit: boolean, isModel: boolean) 
         }
 
         if (isTypeString(text)) {
-            convert(text, needSplit, isModel).then((val) => {
-                output.push(val);
-            });
+            const val = await convert(text, needSplit, isModel); 
+            output.push(val);
         } else if (getInterfaceName(text)) {
             interfaceName = text.split(' ')[1];
         }

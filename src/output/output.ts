@@ -33,9 +33,8 @@ export async function output(text: string) {
         }
 
         if (isTypeString(text)) {
-            convert(text).then((val) => {
-                output.push(val);
-            });
+            const val = await convert(text);
+            output.push(val);
         } else if (getInterfaceName(text)) {
             interfaceName = text.split(' ')[1];
         }
