@@ -19,22 +19,19 @@ This extension transforms interface fields into Angular `input()`, `model()`, `l
 
 ## Demo
 
-Add your GIFs in `public/` and reference them here:
-
 <p align="center">
-  <img src="public/input-demo.gif" alt="Input generation demo" width="900" />
-</p>
-
-<p align="center">
-  <img src="public/output-demo.gif" alt="Output generation demo" width="900" />
+  <img src="public/input-output-demo.gif" alt="Input generation demo" width="900" />
 </p>
 
 ## Quick start
 
 1. Open a TypeScript file in VS Code.
-2. Select an interface or interface fields.
+2. Select an interface or interface fields - **it make difference**. If you select interface - in input will be using links to interface.
 3. Run the command:
-   - `Angular: transform interface to input`
+   - `Angular: transform interface to input`:
+      1) Splited input to `input` and `linked signal`.
+      2) `Model()` input.
+      3) basic `Input()`
    - `Angular: transform interface to output`
 
 ## Example
@@ -80,20 +77,9 @@ npm run compile
 
 Then press `F5` in VS Code to launch the extension host.
 
-## Asset storage
-
-Store logo, screenshots, and GIFs in the `public` folder:
-
-```text
-public/
-├── logo.png
-├── input-demo.gif
-├── output-demo.gif
-```
-
 ## Release notes
 
-### 0.0.1
+### 1.0.0
 
 - Initial extension release
 - Added input generation

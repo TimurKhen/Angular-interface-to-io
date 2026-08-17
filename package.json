@@ -15,22 +15,46 @@
     "commands": [
       {
         "command": "angular-interface-to-io.generateInput",
-        "title": "transform interface to input"
+        "title": "transform interface to input",
+        "icon": {
+          "light": "./public/i2ioLogo.svg",
+          "dark": "./public/i2ioLogo.svg"
+        }
       },
       {
         "command": "angular-interface-to-io.generateOutput",
-        "title": "transform interface to output"
+        "title": "transform interface to output",
+        "icon": {
+          "light": "./public/i2ioLogo.svg",
+          "dark": "./public/i2ioLogo.svg"
+        }
+      }
+    ],
+    "submenus": [
+      {
+        "id": "angular-interface-to-io.ioMenu",
+        "label": "Angular: I2IO",
+        "icon": {
+          "light": "./public/i2ioLogo.svg",
+          "dark": "./public/i2ioLogo.svg"
+        }
       }
     ],
     "menus": {
       "editor/context": [
         {
+          "submenu": "angular-interface-to-io.ioMenu",
+          "group": "1_modification"
+        }
+      ],
+      "angular-interface-to-io.ioMenu": [
+        {
           "command": "angular-interface-to-io.generateInput",
-          "title": "Angular: transform interface to input"
+          "group": "1_actions@1"
         },
         {
           "command": "angular-interface-to-io.generateOutput",
-          "title": "transform interface to output"
+          "group": "1_actions@2"
         }
       ]
     }

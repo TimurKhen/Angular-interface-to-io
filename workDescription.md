@@ -50,15 +50,41 @@ readonly nameInput = input.required<UserForm["name"]>();
 name = linkedSignal(() => this.nameInput);
 ```
 
-## Asset storage
+## Contributing
 
-All screenshots, GIFs, and logos are stored in the `public` folder so they can be reused in the README and VS Code Marketplace preview.
+Contributions are welcome, and the project is designed to stay simple, readable, and easy to maintain.
 
-Recommended files:
+### Contribution rules
 
-- `public/logo.png`
-- `public/input-demo.gif`
-- `public/output-demo.gif`
+- Keep code changes focused and minimal
+- Prefer small, clear improvements over large refactors
+- Match the current project style and pattern of the existing codebase
+- Keep generated output predictable and easy to review
+- Avoid adding unnecessary dependencies unless they are clearly justified
+- Make sure Angular-specific output remains consistent with common signal patterns
+- Update documentation when behavior or usage changes
+
+### Suggested workflow
+
+1. Fork or clone the repository
+2. Create a feature branch for your change
+3. Make the smallest necessary update
+4. Run the project checks locally if relevant
+5. Submit a pull request with a clear description of the change and any examples
+
+### Pull request expectations
+
+- Explain what problem the change solves
+- Include before/after examples when behavior changes
+- Keep the scope limited to the requested feature or fix
+- Document new commands, behavior, or edge cases if introduced
+
+### Code quality expectations
+
+- Prefer readable logic over clever abstractions
+- Keep generated output idiomatic and easy to understand
+- Verify that generated code remains valid TypeScript and Angular syntax
+- Maintain compatibility with the extension's current usage flow
 
 ## Notes
 
