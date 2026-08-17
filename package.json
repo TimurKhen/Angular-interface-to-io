@@ -3,8 +3,8 @@
   "displayName": "Angular-interface-to-io",
   "description": "Automatizate makeing input and output functions of your types (interfaces).",
   "version": "1.0.0",
-  "publisher": "Timur Khen", 
-  "icon": "./public/i2ioLogo.svg",
+  "publisher": "GZGTeam", 
+  "icon": "./public/i2ioLogo.jpg",
   "author": "Timur Khen",
   "license": "MIT",
   "keywords": [
@@ -32,16 +32,16 @@
         "command": "angular-interface-to-io.generateInput",
         "title": "transform interface to input",
         "icon": {
-          "light": "./public/i2ioLogo.svg",
-          "dark": "./public/i2ioLogo.svg"
+          "light": "./public/i2ioLogo.jpg",
+          "dark": "./public/i2ioLogo.jpg"
         }
       },
       {
         "command": "angular-interface-to-io.generateOutput",
         "title": "transform interface to output",
         "icon": {
-          "light": "./public/i2ioLogo.svg",
-          "dark": "./public/i2ioLogo.svg"
+          "light": "./public/i2ioLogo.jpg",
+          "dark": "./public/i2ioLogo.jpg"
         }
       }
     ],
@@ -50,8 +50,8 @@
         "id": "angular-interface-to-io.ioMenu",
         "label": "Angular: I2IO",
         "icon": {
-          "light": "./public/i2ioLogo.svg",
-          "dark": "./public/i2ioLogo.svg"
+          "light": "./public/i2ioLogo.jpg",
+          "dark": "./public/i2ioLogo.jpg"
         }
       }
     ],
