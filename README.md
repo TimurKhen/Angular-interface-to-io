@@ -1,8 +1,11 @@
 # Angular Interface to IO
 
+
 <p align="center">
   <img src="public/i2ioLogo.jpg" alt="Angular Interface to IO logo" width="160" />
 </p>
+
+<p>VSCode marketplace: https://marketplace.visualstudio.com/items?itemName=TimurKhen.angular-interface-2-io</p>
 
 Generate Angular signal boilerplate from TypeScript interfaces in seconds.
 
