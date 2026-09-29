@@ -79,6 +79,15 @@ Then press `F5` in VS Code to launch the extension host.
 
 ## Release notes
 
+### 1.1.1
+
+- Fix signal generation
+
+
+### 1.1.0
+
+- Added signal generation
+
 ### 1.0.0
 
 - Initial extension release

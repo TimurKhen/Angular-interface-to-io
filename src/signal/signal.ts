@@ -5,27 +5,22 @@ import { getInterfaceName } from '../global/isNameOfInterface';
 
 let interfaceName: string = '';
 
-async function convert(string: string, needSplit: boolean, isModel: boolean) {
+async function convert(string: string) {
     const splited = string.split(': ');
     const name = splited[0];
     let type = splited[1];
     type = type.slice(0, -1);
+    // Left - name,
+    // Right - type
 
     if (interfaceName !== '') {
         type = `${interfaceName}["${name}"]`;
     }
 
-    if (needSplit) {
-        return [
-            `   readonly ${name}Input = input.required<${type}>();`,
-            `   ${name} = linkedSignal(() => this.${name}Input);`
-        ].join('\n');
-    } else {
-        return `    readonly ${name} = ${isModel ? 'model' : 'input'}.required<${type}>();`;
-    }
+    return `    ${name} = signal<${type}>();`;
 }
 
-export async function input(text: string, needSplit: boolean, isModel: boolean) {
+export async function signal(text: string) {
     const splited = text.split('\n');
     const output: string[] = [];
 
@@ -38,24 +33,14 @@ export async function input(text: string, needSplit: boolean, isModel: boolean) 
         }
 
         if (isTypeString(text)) {
-            const val = await convert(text, needSplit, isModel); 
+            const val = await convert(text);
             output.push(val);
         } else if (getInterfaceName(text)) {
             interfaceName = text.split(' ')[1];
         }
     }
 
-    let needToImport: string[] = []; 
-
-    if (needSplit) {
-        needToImport.push('input', 'linkedSignal');
-    } else {
-        if (isModel) {
-            needToImport.push('model');
-        } else {
-            needToImport.push('input');
-        }
-    }
+    let needToImport: string[] = ['output']; 
 
     await updateImports(needToImport);
 
